@@ -1,0 +1,7 @@
+name = "backend"
+compatibility_date = "2023-12-01"
+
+ [vars]
+DATABASE_URL = "prisma://accelerate.prisma-prod/cluster-name/database-name?schema=public"
+
+JWT_SECRET = "SECRET"
