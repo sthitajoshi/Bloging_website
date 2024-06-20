@@ -1,5 +1,5 @@
-
-CREATE TABLE "User"(
+-- CreateTable
+CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "name" TEXT,
@@ -8,7 +8,8 @@ CREATE TABLE "User"(
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE "post"(
+-- CreateTable
+CREATE TABLE "Post" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
@@ -18,7 +19,8 @@ CREATE TABLE "post"(
     CONSTRAINT "Post_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
-ALTER TABLE "Post" ADD CONSTRAINT "Post_autherId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASEADE;
- 
+-- AddForeignKey
+ALTER TABLE "Post" ADD CONSTRAINT "Post_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
